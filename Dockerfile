@@ -1,16 +1,15 @@
-FROM node:12-alpine
+FROM node:12-alpine3.14
 
-WORKDIR /home/node/app
+WORKDIR /usr/src/app
 
 COPY package*.json ./
-
-USER node
 
 RUN npm install
 
 COPY . .
 
-
-EXPOSE 3000
+EXPOSE 8086
 
 CMD [ "node", "index.js" ]
+
+
